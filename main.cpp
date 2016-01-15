@@ -454,6 +454,7 @@ void TrainHOGdetector(const std::string& pos, const std::string& neg, const std:
 
 	std::vector<cv::Mat> false_pos_lst;
 	get_hard_negatives(val_lst, svm, train_size, false_pos_lst, debug);
+	svm->clear();
 
 	val_lst.clear();
 	printf("Got %d hard negative samples.\n", false_pos_lst.size());
